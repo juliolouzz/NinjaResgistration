@@ -1,6 +1,8 @@
-package dev.java10x.ninjaregistration;
+package dev.java10x.ninjaregistration.Ninjas;
 
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // Entity transform a Class into a database entity.
 // JPA = Java Persistence API
@@ -14,6 +16,11 @@ public class NinjaModel {
     private String name;
     private String email;
     private int age;
+
+    // @ManyToOne -> Many Ninjas to One Mission
+    @ManyToOne
+    @JoinColumn(name = "missions_id") // Foreign Key
+    private MissionsModel missions;
 
     public NinjaModel() {
     }
