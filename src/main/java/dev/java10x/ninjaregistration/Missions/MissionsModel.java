@@ -2,11 +2,17 @@ package dev.java10x.ninjaregistration.Missions;
 
 import dev.java10x.ninjaregistration.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missions")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissionsModel {
 
     @Id
@@ -19,28 +25,5 @@ public class MissionsModel {
     @OneToMany(mappedBy = "missions")
     private List<NinjaModel> ninja;
 
-    public MissionsModel() {
 
-    }
-
-    public MissionsModel(String name, String difficulty) {
-        this.name = name;
-        this.difficulty = difficulty;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
 }

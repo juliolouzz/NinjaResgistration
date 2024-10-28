@@ -1,6 +1,10 @@
 package dev.java10x.ninjaregistration.Ninjas;
 
+import dev.java10x.ninjaregistration.Missions.MissionsModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -8,6 +12,9 @@ import java.util.List;
 // JPA = Java Persistence API
 @Entity
 @Table(name = "tb_ninja_registration")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class NinjaModel {
 
     @Id
@@ -22,36 +29,5 @@ public class NinjaModel {
     @JoinColumn(name = "missions_id") // Foreign Key
     private MissionsModel missions;
 
-    public NinjaModel() {
-    }
 
-    public NinjaModel(String name, String email, int age) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
 }
