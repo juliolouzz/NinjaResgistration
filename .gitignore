@@ -31,7 +31,9 @@ build/
 
 ### VS Code ###
 .vscode/
-data/
 
-# Ignore the .env file
+### File from H2 DB to persist ###
+/data
+
+### Ignore the .env file
 .env
