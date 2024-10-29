@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+data/
+
+# Ignore the .env file
+.env
