@@ -3,7 +3,7 @@ package dev.java10x.ninjaregistration.Missions;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("missions")
+@RequestMapping("/missions")
 public class MissionsController {
 
     @GetMapping("/list")

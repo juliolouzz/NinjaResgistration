@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     @GetMapping("/welcome")
@@ -19,13 +19,13 @@ public class NinjaController {
     }
 
     // Show All Ninjas (READ)
-    @GetMapping("/All")
+    @GetMapping("/list")
     public String showAllNinjas() {
         return "Show Ninjas";
     }
 
     // Show Ninjas by ID (READ)
-    @GetMapping("/allID")
+    @GetMapping("/listID")
     public String showAllNinjasByID() {
         return "Show Ninjas By ID";
     }
