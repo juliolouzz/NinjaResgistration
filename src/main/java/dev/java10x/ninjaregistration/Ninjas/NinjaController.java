@@ -3,9 +3,17 @@ package dev.java10x.ninjaregistration.Ninjas;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/ninjas")
 public class NinjaController {
+
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
 
     @GetMapping("/welcome")
     public String welcome() {
@@ -20,8 +28,8 @@ public class NinjaController {
 
     // Show All Ninjas (READ)
     @GetMapping("/list")
-    public String showAllNinjas() {
-        return "Show Ninjas";
+    public List<NinjaModel> showAllNinjas() {
+        return ninjaService.showAllNinjas();
     }
 
     // Show Ninjas by ID (READ)
